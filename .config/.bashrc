@@ -1,0 +1,1 @@
+/home/dngtnv/.bashrc
