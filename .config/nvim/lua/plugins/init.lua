@@ -7,4 +7,5 @@ return {
 	{ "folke/tokyonight.nvim", lazy = false, priority = 1000 },
 	{ "catppuccin/nvim", lazy = true, name = "catppuccin" },
 	-- {"github/copilot.vim"}, -- AI code suggestions
+	{ "christoomey/vim-tmux-navigator", lazy = false },
 }

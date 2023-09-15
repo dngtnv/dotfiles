@@ -121,3 +121,9 @@ map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 -- Call hierarchy
 map("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>", opts)
 map("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>", opts)
+
+-- Vim-tmux-navigator
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", opts)
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", opts)
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", opts)
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", opts)
