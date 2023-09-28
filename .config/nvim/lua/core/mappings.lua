@@ -57,7 +57,7 @@ map("n", "<A-c>", "<Cmd>:bdelete<CR>", opts)
 -- If there is no definition, it will instead be hidden
 -- When you use an action in finder like "open vsplit",
 -- you can use <C-t> to jump back
-map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+map("n", "gh", "<cmd>Lspsaga finder<CR>", opts)
 
 -- Code action
 map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
