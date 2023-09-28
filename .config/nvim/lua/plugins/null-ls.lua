@@ -16,7 +16,7 @@ return {
 			null_ls.builtins.code_actions.eslint_d,
 			null_ls.builtins.formatting.prettier.with({
 				extra_args = {
-					"--no-semi",
+					--"--no-semi",
 					"--single-quote",
 					"--jsx-single-quote",
 					"--style",
@@ -51,6 +51,7 @@ return {
 							--vim.lsp.buf.formatting_sync()
 							require("typescript").actions.organizeImports({ sync = true })
 							require("typescript").actions.addMissingImports({ sync = true })
+							require("typescript").actions.removeUnused({ sync = false })
 							vim.lsp.buf.format({
 								timeout_ms = 3000,
 								bufnr = bufnr,

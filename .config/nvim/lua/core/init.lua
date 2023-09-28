@@ -8,11 +8,6 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 vim.scriptencoding = "utf-8"
 vim.wo.number = true
 
--- context-indent-blankline-highlighted by treesitter
--- set.list = true
--- set.listchars:append("space:.")
--- set.listchars:append("eol:↴")
-
 -- set.guicursor = "" -- Fat cursor
 -- set.guifont = "CaskaydiaCove NF Mono:h12"
 
@@ -23,8 +18,8 @@ set.backup = false
 set.clipboard = "unnamedplus"
 set.completeopt = { "menuone", "noselect" }
 set.concealcursor = "nc" -- Hide * markup for bold and italic
-set.conceallevel = 0     -- Hide * markup for bold and italic
-set.confirm = true       -- Confirm to save changes before exiting modified buffer
+set.conceallevel = 0 -- Hide * markup for bold and italic
+set.confirm = true -- Confirm to save changes before exiting modified buffer
 set.mouse = "a"
 set.mousemoveevent = true
 set.pumheight = 10
@@ -93,7 +88,7 @@ set.whichwrap:append("<>[]hl")
 
 -- disable some default providers
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
-  vim.g["loaded_" .. provider .. "_provider"] = 0
+	vim.g["loaded_" .. provider .. "_provider"] = 0
 end
 
 -- autocmd --
@@ -101,34 +96,34 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- dont list quickfix buffers
 autocmd("FileType", {
-  pattern = "qf",
-  callback = function()
-    vim.opt_local.buflisted = false
-  end,
+	pattern = "qf",
+	callback = function()
+		vim.opt_local.buflisted = false
+	end,
 })
 
 -- don't load the plugins below
 local builtins = {
-  "gzip",
-  "zip",
-  "zipPlugin",
-  "fzf",
-  "tar",
-  "tarPlugin",
-  "getscript",
-  "getscriptPlugin",
-  "vimball",
-  "vimballPlugin",
-  "2html_plugin",
-  "matchit",
-  "logiPat",
-  "logipat",
-  "rrhelper",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  --[[ "tohtml",
+	"gzip",
+	"zip",
+	"zipPlugin",
+	"fzf",
+	"tar",
+	"tarPlugin",
+	"getscript",
+	"getscriptPlugin",
+	"vimball",
+	"vimballPlugin",
+	"2html_plugin",
+	"matchit",
+	"logiPat",
+	"logipat",
+	"rrhelper",
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	--[[ "tohtml",
   "getriptPlugin",
   "spellfile_plugin",
   "tutor",
@@ -143,5 +138,5 @@ local builtins = {
 }
 
 for _, plugin in ipairs(builtins) do
-  vim.g["loaded_" .. plugin] = 1
+	vim.g["loaded_" .. plugin] = 1
 end

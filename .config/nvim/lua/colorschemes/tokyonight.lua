@@ -52,4 +52,5 @@ tokyonight.setup({
 	end,
 })
 
+vim.cmd([[hi BufferLineFill guibg='#1B1E2C']])
 vim.cmd([[colorscheme tokyonight]])
