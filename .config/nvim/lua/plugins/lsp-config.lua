@@ -16,9 +16,15 @@ return {
 			"eslint",
 			"tailwindcss",
 			"lua_ls",
+			"jsonls",
 		}
-		require("mason").setup()
-		require("mason-lspconfig").setup({
+		-- Import Mason
+		local mason = require("mason")
+		-- Enable Mason and configure icons
+		mason.setup({})
+		-- Import Mason LSP config
+		local mason_lspconfig = require("mason-lspconfig")
+		mason_lspconfig.setup({
 			ensure_installed = servers,
 		})
 		local nvim_lsp = require("lspconfig")
@@ -62,7 +68,7 @@ return {
             end,
         }) ]]
 			-- Enable completion triggered by <c-x><c-o>
-			vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+			-- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 			-- Mappings.
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -81,9 +87,9 @@ return {
       vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
       vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
       vim.keymap.set("n", "gr", vim.lsp.buf.references, opts) ]]
-			vim.keymap.set("n", "<space>f", function()
-				vim.lsp.buf.format({ async = true })
-			end, opts)
+			-- vim.keymap.set("n", "<space>f", function()
+			--   vim.lsp.buf.format({ async = true })
+			-- end, opts)
 		end
 
 		local lsp_flags = {
@@ -101,6 +107,28 @@ return {
 				capabilities = capabilities,
 				flags = lsp_flags,
 			})
+			if lsp == "lua_ls" then
+				nvim_lsp[lsp].setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+					flags = lsp_flags,
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "vim" },
+							},
+							workspace = {
+								-- Make language server aware of runtime files
+								library = {
+									[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+									[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+									[vim.fn.stdpath("config") .. "/lua"] = true,
+								},
+							},
+						},
+					},
+				})
+			end
 		end
 	end,
 }

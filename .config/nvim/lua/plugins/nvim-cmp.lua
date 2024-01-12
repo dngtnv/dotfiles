@@ -6,6 +6,7 @@ return {
 		{ "L3MON4D3/LuaSnip", dependencies = "rafamadriz/friendly-snippets" },
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
 		"onsails/lspkind-nvim", -- Vscode-like pictograms for nvim lsp completion items
 	},
 
@@ -57,7 +58,7 @@ return {
 				completeopt = "menu,menuone,noinsert",
 			},
 			mapping = cmp.mapping.preset.insert({
-				["<C-d>"] = cmp.mapping.scroll_docs(-4),
+				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
@@ -85,8 +86,9 @@ return {
 				end, { "i", "s" }),
 			}),
 			sources = {
-				{ name = "nvim_lsp", priority = 30, group_index = 2 },
-				{ name = "luasnip", priority = 20, group_index = 2 },
+				{ name = "nvim_lsp", priority = 40, group_index = 2 },
+				{ name = "luasnip", priority = 30, group_index = 2 },
+				{ name = "path", priority = 20, group_index = 2 },
 				{ name = "buffer", priority = 10, group_index = 2 },
 			},
 			window = {
