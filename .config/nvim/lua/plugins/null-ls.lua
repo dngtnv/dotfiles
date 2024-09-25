@@ -10,8 +10,6 @@ return {
     local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 
     local sources = {
-      null_ls.builtins.diagnostics.eslint_d,
-      null_ls.builtins.code_actions.eslint_d,
       null_ls.builtins.formatting.prettier.with({
         extra_args = {
           "--single-quote",
@@ -22,7 +20,6 @@ return {
         },
       }),
       null_ls.builtins.formatting.stylua,
-      null_ls.builtins.formatting.fixjson,
       null_ls.builtins.code_actions.gitsigns,
       -- Static analysis & linting & formatting Python
       -- null_ls.builtins.diagnostics.ruff,
