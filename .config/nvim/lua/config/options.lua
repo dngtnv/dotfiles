@@ -4,3 +4,5 @@
 local set = vim.opt
 
 set.mousemoveevent = true
+set.list = false
+set.relativenumber = false
