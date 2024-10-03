@@ -125,7 +125,7 @@ setopt hist_verify
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
-alias ls="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --long --icons=always --no-user"
 
 alias cd="z"
 
