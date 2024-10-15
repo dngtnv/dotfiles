@@ -5,7 +5,7 @@ return {
 		priority = 1000,
 		opts = {
 			style = "storm",
-			transparent = true,
+			transparent = false,
 			styles = {
 				sidebars = "transparent",
 				floats = "transparent",
@@ -31,8 +31,13 @@ return {
 		"akinsho/bufferline.nvim",
 		opts = {
 			options = {
+				indicator = {
+					icon = "▎",
+					style = "icon",
+				},
 				right_mouse_command = "vertical sbuffer %d",
 				middle_mouse_command = "bdelete! %d",
+				separator_style = "thin",
 				hover = {
 					enabled = true,
 					delay = 200,
