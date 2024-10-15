@@ -113,6 +113,8 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+EDITOR="nvim"
+
 # History setup
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -130,3 +132,6 @@ alias ls="eza --color=always --long --icons=always --no-user"
 alias cd="z"
 
 eval "$(zoxide init zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
