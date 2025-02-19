@@ -129,9 +129,7 @@ bindkey "^[[B" history-search-forward
 
 alias ls="eza --color=always --long --icons=always --no-user"
 
-alias cd="z"
-
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
