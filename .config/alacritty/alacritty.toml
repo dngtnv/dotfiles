@@ -67,5 +67,5 @@ foreground = "#a9b1d6"
 [selection]
 save_to_clipboard = true
 
-[shell]
-program = "/usr/bin/zsh"
+[terminal]
+shell = "/usr/bin/zsh"
